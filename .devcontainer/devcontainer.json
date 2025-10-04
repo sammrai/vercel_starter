@@ -1,0 +1,27 @@
+{
+  "name": "${localWorkspaceFolderBasename}",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bullseye",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-playwright.playwright",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "remoteEnv": {
+    "PATH": "${containerWorkspaceFolder}/.npm-global/bin:${containerEnv:PATH}"
+  },
+  "remoteUser": "node",
+  "mounts": [
+    "source=${localEnv:HOME}/.codex,target=/home/node/.codex,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.gemini,target=/home/node/.gemini,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.claude,target=/home/pwuser/.claude,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.claude.json,target=/home/pwuser/.claude.json,type=bind,consistency=cached"
+
+  ],
+  "initializeCommand": "mkdir -p ${localEnv:HOME}/.codex ${localEnv:HOME}/.gemini ${localEnv:HOME}/.claude",
+  "postCreateCommand": "echo 'export PS1=\"\\[\\033[0;32m\\]\\u\\[\\033[0m\\] $ \"' >> ~/.bashrc && npm config set prefix ${containerWorkspaceFolder}/.npm-global && npm install -g @google/gemini-cli @openai/codex @anthropic-ai/claude-code"
+}

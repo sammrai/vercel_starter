@@ -1,0 +1,7 @@
+node_modules/**
+.playwright*/**
+.npm-global/**
+.next/
+*.log
+.DS_Store
+*.png
