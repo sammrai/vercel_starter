@@ -9,7 +9,13 @@ A lightweight Next.js (App Router) + Tailwind CSS starter, ready to deploy on Ve
 - npm scripts for development, linting, and production builds
 
 ## Development
-When you open the project in VS Code with the included Dev Container, dependencies are installed automatically. Afterwards, start the local server with:
+Clone the template (replace `awesome_app` with your project name):
+
+```bash
+git clone https://github.com/sammrai/vercel_starter.git awesome_app
+```
+
+When you open the folder in VS Code with the included Dev Container, dependencies are installed automatically. Afterwards, start the local server with:
 
 ```bash
 npm run dev
