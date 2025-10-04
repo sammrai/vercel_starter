@@ -1,19 +1,21 @@
 # Next.js Vercel Starter
 
-A clean Next.js App Router template designed to be deployed on Vercel. It includes a minimal landing page, Tailwind CSS, and an example Node.js API route so you can start shipping fast.
+A lightweight Next.js (App Router) + Tailwind CSS starter, ready to deploy on Vercel. The template stays intentionally minimal so you can drop in your own UI and API logic without wading through extra boilerplate.
 
 ## What's Inside?
-- **Next.js 14** with the App Router enabled
-- **Tailwind CSS** already configured under `app/globals.css`
+- **Next.js 14** with the App Router
+- **Tailwind CSS** preconfigured in `app/globals.css`
 - **Sample API route** at `app/api/hello/route.js`
-- Ready-to-use npm scripts for development, linting, and production builds
+- npm scripts for development, linting, and production builds
 
-## Quick Start
+## Development
+When you open the project in VS Code with the included Dev Container, dependencies are installed automatically. Afterwards, start the local server with:
+
 ```bash
-npm install
 npm run dev
 ```
-Visit `http://localhost:3000` to view the starter UI. The API route lives at `http://localhost:3000/api/hello`.
+
+Visit `http://localhost:3000` to view the starter UI. The sample API responds at `http://localhost:3000/api/hello`.
 
 ## Project Structure
 ```
@@ -21,13 +23,17 @@ app/
   api/hello/route.js   → Example Node.js serverless function
   layout.jsx           → Root layout & metadata
   page.jsx             → Landing page template
-public/                → Static assets
+public/                → Static assets live here
 ```
 
 ## Customisation Ideas
-- Swap the copy and styling in `app/page.jsx` to match your product.
-- Add more routes under `app/api/*` to connect to databases or third-party services.
-- Bring in environment variables through Vercel Project Settings.
+- Replace the copy and styling in `app/page.jsx` with your product messaging.
+- Add additional API routes under `app/api/*` to integrate databases or third-party services.
+- Define environment variables in Vercel Project Settings and read them at runtime.
 
-## Deploying
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for a step-by-step guide to deploying this repository on Vercel.
+## Deploying to Vercel
+1. Push this repository to your Git provider (GitHub, GitLab, or Bitbucket).
+2. Open [vercel.com/new](https://vercel.com/new) and import the repository.
+3. Accept the suggested defaults (`npm run build`, output directory `.next`) and click **Deploy**.
+
+No extra CLI commands are required—Vercel handles the build and provisioning directly from the dashboard.
